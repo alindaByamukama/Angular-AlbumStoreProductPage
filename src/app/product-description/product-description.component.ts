@@ -1,3 +1,4 @@
+import { HttpResponseBase } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'app/product.service';
 
@@ -7,13 +8,18 @@ import { ProductService } from 'app/product.service';
   styleUrls: ['./product-description.component.css']
 })
 export class ProductDescriptionComponent implements OnInit {
+  albumInfo;
+
   /*declare albumInfo as a class property in the ProductDescription class, 
   which you can do by simply writing albumInfo; 
   on the first line after the class definition*/
 
-  constructor(private _productService: any) { }
+  constructor(private _productService: ProductService) { }
 
   ngOnInit() {
+    this._productService.getAlbum(1).subscribe(response => 
+      this.albumInfo - response);
+
     /* call this._productService.getAlbum(1) 
     and chain a call to the subscribe(response => this.albumInfo - response) method 
     */
