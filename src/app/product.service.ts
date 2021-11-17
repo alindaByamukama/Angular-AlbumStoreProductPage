@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-@Injectable({
+@Injectable(/*{
   providedIn: 'root'
-})
+}*/)
 export class ProductService {
+  
   private _albumUrl = "../assets/album.json";
 
   getAlbum(id: number) {
@@ -15,5 +16,5 @@ export class ProductService {
     and calls response.json()*/
   }
 
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: Http) { }
 }

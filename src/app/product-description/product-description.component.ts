@@ -1,6 +1,6 @@
 import { HttpResponseBase } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from 'app/product.service';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-description',
@@ -8,6 +8,7 @@ import { ProductService } from 'app/product.service';
   styleUrls: ['./product-description.component.css']
 })
 export class ProductDescriptionComponent implements OnInit {
+  
   albumInfo;
 
   /*declare albumInfo as a class property in the ProductDescription class, 
