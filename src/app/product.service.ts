@@ -11,10 +11,10 @@ export class ProductService {
 
   getAlbum(id: number) {
     return this._http.get(this._albumUrl).map((response)=>response.json());
-    /* at the end of that get() call, 
+  }
+      /* at the end of that get() call, 
     chain a function that maps over the response argument 
     and calls response.json()*/
-  }
 
   constructor(private _http: Http) { }
 }
